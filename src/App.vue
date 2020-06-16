@@ -1,19 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" class="nav-menu">
+      <router-link to="/">Home</router-link>|
+      <router-link to="/contact">Contact</router-link>
+      <router-link to="/contact">Contact</router-link>
+      <router-link to="/contact">Contact</router-link>
     </div>
-    <router-view/>
+    <router-view class="content-view" />
   </div>
 </template>
 
 <style lang="scss">
+.nav-menu {
+  height: 100%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-view {
+  border-left: 15px solid red;
+  padding-left: 15px;
+}
+
 #app {
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 160px auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
