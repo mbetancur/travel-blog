@@ -54,7 +54,7 @@ export default {
     },
     onSubmit(evt) {
       evt.preventDefault();
-    //   this.sendEmail();
+      this.sendEmail();
     },
     sendEmail() {
       Email.send({
