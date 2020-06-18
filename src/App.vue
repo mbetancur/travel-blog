@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <div id="nav" class="nav-menu">
-      <router-link to="/">Home</router-link>|
+      <div class="my-photo">
+        <img src="./assets/logo.png" alt="Foto panel principal" />
+      </div>
+      <h2>Miguel Betancur</h2>
+      <router-link to="/">Home</router-link>
       <router-link to="/contact">Contact</router-link>
       <router-link to="/contact">Contact</router-link>
       <router-link to="/contact">Contact</router-link>
@@ -12,21 +16,32 @@
 
 <style lang="scss">
 .nav-menu {
-  height: 100%;
-  background-color: yellow;
+  height: 100vh;
+  background-color: rgb(227, 227, 121);
   display: flex;
   flex-direction: column;
+  text-align: center;
+  border-right: 15px solid red;
+
+  .my-photo img {
+    height: 80px;
+    max-height: 80px;
+    width: 80px;
+  }
+
+  h2 {
+    margin-bottom: 12px;
+  }
 }
 
 .content-view {
-  border-left: 15px solid red;
   padding-left: 15px;
 }
 
 #app {
   flex-direction: row;
   display: grid;
-  grid-template-columns: 160px auto;
+  grid-template-columns: 170px auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,11 +50,11 @@
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
-
+    padding: 12px;
+    // border-bottom: 1px solid #f5f5f5;
     &.router-link-exact-active {
       color: #42b983;
     }

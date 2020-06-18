@@ -89,7 +89,6 @@ export default {
   align-items: center;
 
   .contact-cards {
-    padding: 100px 0;
     margin: 100px 0;
     width: 70%;
     display: flex;
@@ -103,10 +102,6 @@ export default {
   }
 
   .form {
-    display: flex;
-    width: 60%;
-    flex-direction: column;
-    align-items: center;
     .form-elements {
       display: flex;
       flex-direction: row;

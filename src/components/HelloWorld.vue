@@ -25,25 +25,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.panel-header {
-  display: flex;
-  justify-content: space-around;
-
-  &_my-photo img {
-    min-height: 550px;
+.landing-page {
+  
+  .panel-header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    &_my-photo img {
+      // min-height: 550px;
+    }
+    &_intro-text {
+      padding: 70px 15%;
+      background-color: red; //#fcfcfc;
+    }
   }
-  &_intro-text {
-    padding: 70px 15%;
-    background-color: red; //#fcfcfc;
-  }
-}
-.panel-info {
-  padding: 50px 70px 70px;
-  display: flex;
-  justify-content: space-around;
+  .panel-info {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 50px 0;
+    // display: flex;
+    // justify-content: space-around;
 
-  p {
-    width: 460px;
+    p {
+      padding: 12px;
+      // width: 460px;
+    }
   }
 }
 </style>
