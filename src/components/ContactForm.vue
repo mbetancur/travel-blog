@@ -18,14 +18,9 @@
       </div>
       <form class="form" @submit="onSubmit">
         <h2>Qué puedo hacer por ti?</h2>
-        <div class="form__alert-success">
-          <p>
-            Contact form successfully submitted. Thank you, I will get back to you soon!
-            <span
-              class="material-icons"
-              @click="closeAlert"
-            >close</span>
-          </p>
+        <div v-if="alertSuccess" class="form__alert-success">
+          <p>Contact form successfully submitted. Thank you, I will get back to you soon!</p>
+          <button class="material-icons" @click="closeAlert">close</button>
         </div>
         <div class="form-elements">
           <div class="inputs">
@@ -54,7 +49,13 @@
               autocomplete="off"
             />
           </div>
-          <textarea name="message" v-model="contact.message" rows="4" placeholder="Message"></textarea>
+          <textarea
+            required
+            name="message"
+            v-model="contact.message"
+            rows="4"
+            placeholder="Message"
+          ></textarea>
         </div>
         <button class="form__button">Send Message</button>
       </form>
@@ -72,7 +73,8 @@ export default {
         subject: "",
         email: "",
         message: ""
-      }
+      },
+      alertSuccess: false
     };
   },
   methods: {
@@ -81,22 +83,55 @@ export default {
         this.contact[field] = "";
       }
     },
+    showAlert() {
+      this.alertSuccess = true;
+    },
+    closeAlert() {
+      this.alertSuccess = false;
+    },
     onSubmit(evt) {
       evt.preventDefault();
-      console.log("sended email");
       this.sendEmail();
+      // this.fakeSendEmail();
     },
     sendEmail() {
       Email.send({
         Host: "smtp.elasticemail.com",
         Username: "slash-252@hotmail.com",
         Password: "67435E3FA315112018493A3198A6DDB28980",
-        // To: "mikebaia@yopmail.com",
-        To: "mateobetancurgrisales@gmail.com",
+        //TEST
+        // To: "mateobetancurgrisales@gmail.com",
+        //REAL
+        To: "miguelbetancurgrisales@gmail.com",
         From: "slash-252@hotmail.com",
-        Subject: "This is the subject",
-        Body: "And this is the body"
-      }).then(message => alert(message));
+        Subject: "New message from your blog El Rincón Verde",
+        Body:
+          "Hello Miguel, " +
+          this.contact.name +
+          " with email: " +
+          this.contact.email +
+          " wrote this in El Rincón Verde for you: " +
+          "Subject: " +
+          this.contact.subject +
+          ". Message: " +
+          this.contact.message
+      }).then(this.showAlert(), this.clearForm());
+    },
+    fakeSendEmail() {
+      console.log(
+        "sended email",
+        "Hello Miguel, " +
+          this.contact.name +
+          " with email: " +
+          this.contact.email +
+          " wrote this in El Rincón Verde for you: " +
+          "Subject: " +
+          this.contact.subject +
+          ". Message: " +
+          this.contact.message
+      );
+      this.showAlert();
+      this.clearForm();
     }
   }
 };
@@ -143,13 +178,16 @@ export default {
       border-bottom: 3px solid #42b983;
     }
     &__alert-success {
-      // display: flex;
-      margin: 0;
+      display: flex;
+      justify-content: space-between;
       background-color: #7fceab;
-      text-align: center;
       border: 1px solid #42b983;
       p {
-        margin: 4px 0;
+        margin: 4px 12px;
+      }
+      button {
+        background-color: transparent;
+        border: transparent;
       }
     }
 
@@ -168,7 +206,6 @@ export default {
           height: 42px;
         }
       }
-
       textarea {
         resize: none;
         width: 25vw;

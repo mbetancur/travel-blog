@@ -4,14 +4,32 @@
     <div class="blog_cards">
       <div class="blog_card">
         <router-link to="/post1">
-          <img src="../assets/logo.png" alt="Foto panel principal" />
+          <img src="../assets/salado.jpg" alt="Foto panel principal" class="blog_card__post1-img"/>
           <div class="blog_card__post-data">
             <p>Junio 2020</p>
-            <h3>This is a post!</h3>
+            <h3>Un tanto Salado</h3>
           </div>
         </router-link>
       </div>
       <div class="blog_card">
+        <router-link to="/post2">
+          <img src="../assets/la-clara.jpg" alt="Foto panel principal" class="blog_card__post1-img"/>
+          <div class="blog_card__post-data">
+            <p>Junio 2020</p>
+            <h3>Tan Clara como el agua</h3>
+          </div>
+        </router-link>
+      </div>
+      <div class="blog_card">
+        <router-link to="/post3">
+          <img src="../assets/arvi.jpg" alt="Foto panel principal" class="blog_card__post1-img"/>
+          <div class="blog_card__post-data">
+            <p>Junio 2020</p>
+            <h3>El arví</h3>
+          </div>
+        </router-link>
+      </div>
+      <!-- <div class="blog_card">
         <router-link to="/post1">
           <img src="../assets/logo.png" alt="Foto panel principal" />
           <div class="blog_card__post-data">
@@ -19,25 +37,7 @@
             <h3>This is a post!</h3>
           </div>
         </router-link>
-      </div>
-      <div class="blog_card">
-        <router-link to="/post1">
-          <img src="../assets/logo.png" alt="Foto panel principal" />
-          <div class="blog_card__post-data">
-            <p>Junio 2020</p>
-            <h3>This is a post!</h3>
-          </div>
-        </router-link>
-      </div>
-      <div class="blog_card">
-        <router-link to="/post1">
-          <img src="../assets/logo.png" alt="Foto panel principal" />
-          <div class="blog_card__post-data">
-            <p>Junio 2020</p>
-            <h3>This is a post!</h3>
-          </div>
-        </router-link>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -62,7 +62,8 @@ export default {
 
     .blog_card {
       margin-top: 8vh;
-      width: 35vw;
+      width: 36vw;
+      // height: 24vh;
       display: flex;
       border: 1px solid #eee;
       flex-direction: column;
@@ -78,6 +79,10 @@ export default {
       a {
         color: #333;
         text-decoration: none;
+      }
+      &__post1-img {
+        width: 100%;
+        height: 100%;
       }
     }
   }

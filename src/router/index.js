@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -27,6 +27,17 @@ Vue.use(VueRouter)
     path: '/post1',
     name: 'Post1',
     component: () => import('../views/Post1.vue')
+  }
+  ,
+  {
+    path: '/post2',
+    name: 'Post2',
+    component: () => import('../views/Post2.vue')
+  },
+  {
+    path: '/post3',
+    name: 'Post3',
+    component: () => import('../views/Post3.vue')
   }
 ]
 
