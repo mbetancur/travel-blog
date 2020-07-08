@@ -1,0 +1,8 @@
+/// Titles pages decoration
+@mixin titleUnderline {
+    border-bottom: 3px solid $brand-color;
+}
+
+%titleUnderline {
+    border-bottom: 3px solid $brand-color;
+}

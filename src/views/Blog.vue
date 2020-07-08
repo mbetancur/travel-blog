@@ -4,7 +4,7 @@
     <div class="blog_cards">
       <div class="blog_card">
         <router-link to="/post1">
-          <img src="../assets/salado.jpg" alt="Foto panel principal" class="blog_card__post1-img"/>
+          <img src="../assets/salado.jpg" alt="Foto panel principal" class="blog_card__post1-img" />
           <div class="blog_card__post-data">
             <p>Junio 2020</p>
             <h3>Un tanto Salado</h3>
@@ -13,19 +13,20 @@
       </div>
       <div class="blog_card">
         <router-link to="/post2">
-          <img src="../assets/la-clara.jpg" alt="Foto panel principal" class="blog_card__post1-img"/>
+          <img src="../assets/la-clara.jpg" alt="Foto panel principal" class="blog_card__post1-img" />
           <div class="blog_card__post-data">
             <p>Junio 2020</p>
             <h3>Tan Clara como el agua</h3>
           </div>
         </router-link>
       </div>
+      <!-- <blog-card link="post3" image="../assets/salado.jpg" date="June 2020" title="El Arví" /> //TODO:look how to improve this creator-->
       <div class="blog_card">
         <router-link to="/post3">
           <img src="../assets/arvi.jpg" alt="Foto panel principal" class="blog_card__post1-img"/>
           <div class="blog_card__post-data">
             <p>Junio 2020</p>
-            <h3>El arví</h3>
+            <h3>Arví, el parque de la abundancia</h3>
           </div>
         </router-link>
       </div>
@@ -37,14 +38,30 @@
             <h3>This is a post!</h3>
           </div>
         </router-link>
-      </div> -->
+      </div>-->
     </div>
+    <survey-modal v-model="modalOpen" />
   </div>
 </template>
 
 <script>
+import BlogCard from "@/components/BlogCard";
+import SurveyModal from "@/components/SurveyModal";
+
 export default {
-  name: "Blog"
+  components: {
+    BlogCard,
+    SurveyModal
+  },
+  name: "Blog",
+  created() {
+    this.modalOpen = true;
+  },
+  data() {
+    return {
+      modalOpen: false
+    };
+  }
 };
 </script>
 
@@ -53,7 +70,8 @@ export default {
   padding: 42px 70px 70px;
 
   h1 {
-    border-bottom: 3px solid #42b983;
+    // border-bottom: 3px solid #42b983;
+    @extend %titleUnderline;
   }
   .blog_cards {
     display: flex;

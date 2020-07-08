@@ -1,17 +1,62 @@
 <template>
-  <ContactForm />
+  <div class="contact">
+    <h1 class="contact__title">Contact</h1>
+    <div class="contact__info">
+      <div class="contact__info--cards">
+        <!-- <contact-card icon="phone" text=""/> -->
+        <contact-card icon="location_on" text="Colombia - Antioquia" />
+        <!-- TODO: auto mail -->
+        <contact-card icon="mail_outline" text="miguelbetancurgrisales@gmail.com" />
+      </div>
+      <ContactForm />
+    </div>
+    <survey-modal v-model="modalOpen" />
+  </div>
 </template>
 
 <script>
 import ContactForm from "@/components/ContactForm.vue";
+import ContactCard from "@/components/ContactCard";
+import SurveyModal from "@/components/SurveyModal";
 
 export default {
-  name: 'Contact',
+  name: "Contact",
   components: {
-    ContactForm
+    ContactForm,
+    ContactCard,
+    SurveyModal
+  },
+  data() {
+    return {
+      modalOpen: false
+    };
+  },
+  created() {
+    this.modalOpen = true;
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  padding: 42px 70px 70px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    // border-bottom: 3px solid #42b983;
+    @include titleUnderline();
+  }
+
+  .contact__info--cards {
+    margin: 70px 0;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+  }
+}
 </style>

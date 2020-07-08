@@ -1,17 +1,55 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <header-panel />
+    <!-- <button class="survey__button" @click="openModal">Open Modal</button> -->
+    <survey-modal class="s" v-model="modalOpen" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HeaderPanel from "@/components/HeaderPanel.vue";
+import SurveyModal from "@/components/SurveyModal";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    HeaderPanel,
+    SurveyModal
+  },
+  data() {
+    return {
+      modalOpen: false
+    };
+  },
+  created() {
+    this.modalOpen = true;
+  },
+  methods: {
+    openModal() {
+      this.modalOpen = !this.modalOpen;
+    }
+  }
+};
+</script>
+<style lang="scss" scoped>
+.s {
+  animation-duration: 1.1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    left: 0;
+  }
+  33% {
+    left: 71%;
+  }
+  66% {
+    left: 45%;
+  }
+  100% {
+    left: 69%;
   }
 }
-</script>
+</style>

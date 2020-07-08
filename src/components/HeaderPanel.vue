@@ -1,11 +1,11 @@
 <template>
-  <div class="landing-page">
+  <header class="landing-page">
     <div class="panel-header">
       <div class="panel-header__my-photo">
         <img src="../assets/FotoPrincipal.jpg" alt="Foto panel principal" />
       </div>
       <div class="panel-header__intro-text">
-        <h1>El rincón verde</h1>
+        <h1>EL RINCÓN VERDE</h1>
         <i>
           “And I have always wished that for myself.
           <br />“And now, as you graduate to begin anew, I wish that for you.
@@ -27,7 +27,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
