@@ -38,7 +38,12 @@ const routes = [
     path: '/post3',
     name: 'Post3',
     component: () => import('../views/Post3.vue')
-  }
+  },
+  {
+    path: '/opinion',
+    name: 'Opinion',
+    component: () => import('../views/Opinion.vue')
+  },
 ]
 
 const router = new VueRouter({

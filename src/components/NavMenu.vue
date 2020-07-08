@@ -7,6 +7,8 @@
     <router-link to="/">Home</router-link>
     <router-link to="/blog">Blog</router-link>
     <router-link to="/contact">Contact</router-link>
+    <router-link to="/opinion">Mi Opinión</router-link>
+
   </nav>
 </template>
 
