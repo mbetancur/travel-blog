@@ -1,6 +1,6 @@
 <template>
   <div class="opinion">
-    <h1>Mi opinión</h1>
+    <h1 class="opinion__title">Mi opinión</h1>
     <img src="../assets/opinion.jpeg" alt="opinion image">
   </div>
 </template>
@@ -13,10 +13,9 @@ export default {
 
 <style lang="scss" scoped>
 .opinion {
-  padding: 42px 70px 70px;
+  @extend %pagePadding;
 
-  h1 {
-    // border-bottom: 3px solid #42b983;
+  &__title {
     @extend %titleUnderline;
   }
 }

@@ -39,7 +39,12 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  padding: 42px 70px 70px;
+  @extend %pagePadding;
+
+  &__title {
+    @extend %titleUnderline;
+    // @include titleUnderline();
+  }
 
   &__info {
     display: flex;
@@ -47,12 +52,7 @@ export default {
     align-items: center;
   }
 
-  h1 {
-    // border-bottom: 3px solid #42b983;
-    @include titleUnderline();
-  }
-
-  .contact__info--cards {
+  &__info--cards {
     margin: 70px 0;
     width: 70vw;
     display: flex;

@@ -6,3 +6,13 @@
 %titleUnderline {
     border-bottom: 3px solid $brand-color;
 }
+
+/// Main padding structure
+%pagePadding { 
+    padding: 42px 70px 70px;
+}
+
+@mixin box($width, $height:$width) {
+    width: $width;
+    height: $height;
+}

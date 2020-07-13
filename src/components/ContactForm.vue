@@ -1,7 +1,8 @@
 <template>
   <form class="contact-form" @submit="onSubmit">
-    <h2>Qué puedo hacer por ti?</h2>
-    <div v-if="alertSuccess" class="contact-form__alert-success">
+    <h2 class="contact-form__title">Qué puedo hacer por ti?</h2>
+    <!-- TODO: make alert a component -->
+    <div v-if="alertSuccess" class="contact-form--alert-success ">
       <p>Contact form successfully submitted. Thank you, I will get back to you soon!</p>
       <button class="material-icons" @click="closeAlert">close</button>
     </div>
@@ -77,12 +78,12 @@ export default {
 
 <style lang="scss" scoped>
 .contact-form {
-  h2 {
+  &__title {
     width: fit-content;
-    border-bottom: 3px solid #42b983;
+    @extend %titleUnderline;
   }
 
-  &__alert-success {
+  &--alert-success  {
     display: flex;
     justify-content: space-between;
     background-color: #7fceab;
@@ -121,16 +122,13 @@ export default {
   }
 
   &__button {
+    // @extend %titleUnderline;
     border: 3px solid #42b983;
     background-color: #fff;
     padding: 10px 32px;
 
     &:hover {
-      background-color: #42b983;
-    }
-
-    &:active {
-      top: 1px;
+      background-color: $brand-color;
     }
   }
 }

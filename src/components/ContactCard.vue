@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-card">
+  <div class="contact__card">
     <span class="material-icons">{{icon}}</span>
     {{text}}
   </div>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contact-card {
+.contact__card {
   min-width: 22vw;
   display: flex;
   flex-direction: column;

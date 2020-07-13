@@ -70,8 +70,8 @@ export default {
     // display: flex;
     // justify-content: space-around;
     h2 {
+      @extend %titleUnderline;
       width: fit-content;
-      border-bottom: 3px solid #42b983;
     }
     p {
       margin: 0 2vw 0 1vw;

@@ -2,7 +2,7 @@
   <div class="home">
     <header-panel />
     <!-- <button class="survey__button" @click="openModal">Open Modal</button> -->
-    <survey-modal class="s" v-model="modalOpen" />
+    <survey-modal class="survey-slide" v-model="modalOpen" />
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.s {
+.survey-slide {
   animation-duration: 1.1s;
   animation-name: slidein;
 }
