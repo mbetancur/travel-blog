@@ -3,12 +3,11 @@
     <div class="nav-menu__photo">
       <img src="../assets/logo.png" alt="Foto logo" />
     </div>
-    <h2>Miguel Betancur</h2>
-    <router-link to="/">Home</router-link>
-    <router-link to="/blog">Blog</router-link>
-    <router-link to="/contact">Contact</router-link>
-    <router-link to="/opinion">Mi Opinión</router-link>
-
+    <h2 class="nav-menu__title">Miguel Betancur</h2>
+    <router-link class="nav-menu__link" to="/">Home</router-link>
+    <router-link class="nav-menu__link" to="/blog">Blog</router-link>
+    <router-link class="nav-menu__link" to="/contact">Contact</router-link>
+    <router-link class="nav-menu__link" to="/opinion">Mi Opinión</router-link>
   </nav>
 </template>
 
@@ -21,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 .nav-menu {
   padding-top: 30px;
-  height: 100vh;
+  // height: 100vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -34,11 +33,11 @@ export default {
     width: 80px;
   }
 
-  h2 {
+  &__title {
     margin-bottom: 20px;
   }
 
-  a {
+  &__link {
     font-size: 15px;
     font-weight: bold;
     color: #2c3e50;

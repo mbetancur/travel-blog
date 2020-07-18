@@ -1,8 +1,8 @@
 <template>
-  <div class="blog_card">
+  <div class="blog-card">
     <router-link to="/post3">
-      <img src="../assets/arvi.jpg" alt="Foto blog card" class="blog_card__post-img" />
-      <div class="blog_card__post-data">
+      <img src="../assets/arvi.jpg" alt="Foto blog card" class="blog-card__post-img" />
+      <div class="blog-card__post-data">
         <p>{{image}}</p>
         <h3>{{title}}</h3>
       </div>
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.blog_card {
+.blog-card {
   margin-top: 8vh;
   width: 36vw;
   // height: 24vh;

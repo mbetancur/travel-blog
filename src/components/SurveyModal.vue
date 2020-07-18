@@ -1,12 +1,12 @@
 <template>
   <div class="survey-modal" v-show="value">
-    <span class="material-icons">help_outline</span>
+    <span class="survey-modal__logo material-icons">help_outline</span>
     <a
       href="https://docs.google.com/forms/d/e/1FAIpQLSdtirdRV2ixrhhPxLcr8bPZGtcvlLautqGaCyc91zU-S9sjcw/viewform"
       target="_blank"
       rel="noopener noreferrer"
     >¿Te gusta nuestro contenido?</a>
-    <button class="material-icons" @click="close">close</button>
+    <button class="survey-modal__button material-icons" @click="close">close</button>
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .survey-modal {
-  span {
+  &__logo {
     font-size: 55px;
   }
   border-radius: 12px;
@@ -49,7 +49,7 @@ export default {
   right: 0;
   margin: 0 28px 14px 0;
 
-  button {
+  &__button {
     margin-top: 12px;
     align-self: flex-start;
     background-color: transparent;
