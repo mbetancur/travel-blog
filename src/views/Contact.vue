@@ -10,7 +10,6 @@
       </div>
       <ContactForm />
     </div>
-    <survey-modal v-model="modalOpen" />
   </div>
 </template>
 
@@ -39,24 +38,26 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  @extend %pagePadding;
+  padding: 40px 30px 60px;
 
   &__title {
-    @extend %titleUnderline;
-    // @include titleUnderline();
+    border-bottom: 3px solid #42b983;
   }
+  
+  @include media-query(sm) {
+    // @extend %pagePadding;
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__info--cards {
-    margin: 70px 0;
-    width: 70vw;
-    display: flex;
-    justify-content: space-around;
+    &__info--cards {
+      margin: 70px 0;
+      width: 70vw;
+      display: flex;
+      justify-content: space-around;
+    }
   }
 }
 </style>

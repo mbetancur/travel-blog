@@ -16,3 +16,13 @@
     width: $width;
     height: $height;
 }
+// Responsiveness mixin
+@mixin media-query($breakpoint) {
+    // check if the key exist into the map
+    @if(map-has-key($breakpoints, $breakpoint)) {
+        $value: map-get($breakpoints, $breakpoint);
+        @media (min-width: $value){
+            @content;        
+        }
+    }
+}

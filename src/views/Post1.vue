@@ -32,7 +32,7 @@ export default {
   &__image {
     img {
       max-height: 90vh; //TODO: adjust better the image
-      // width: 100%;
+      width: 100%;
     }
   }
 

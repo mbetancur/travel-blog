@@ -2,7 +2,7 @@
   <form class="contact-form" @submit="onSubmit">
     <h2 class="contact-form__title">Qué puedo hacer por ti?</h2>
     <!-- TODO: make alert a component -->
-    <div v-if="alertSuccess" class="contact-form--alert-success ">
+    <div v-if="alertSuccess" class="contact-form--alert-success">
       <p>Contact form successfully submitted. Thank you, I will get back to you soon!</p>
       <button class="material-icons" @click="closeAlert">close</button>
     </div>
@@ -80,55 +80,87 @@ export default {
 .contact-form {
   &__title {
     width: fit-content;
-    @extend %titleUnderline;
+    // @extend %titleUnderline;
+    border-bottom: 3px solid #42b983;
   }
 
-  &--alert-success  {
-    display: flex;
-    justify-content: space-between;
-    background-color: #7fceab;
-    border: 1px solid #42b983;
+  &--alert-success {
+      display: flex;
+      justify-content: space-between;
+      background-color: #7fceab;
+      border: 1px solid #42b983;
 
-    p {
-      margin: 4px 12px;
-    }
+      p {
+        margin: 4px 12px;
+      }
 
-    button {
-      background-color: transparent;
-      border: transparent;
+      button {
+        background-color: transparent;
+        border: transparent;
+      }
     }
-  }
 
   &__elements {
-    margin-top: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     &--inputs {
-      width: 25vw;
-      display: flex;
-      flex-direction: column;
-
       input {
-        margin: 0 12px 12px 0;
+        margin: 12px 0;
+        width: 100%;
         height: 42px;
       }
     }
     textarea {
+      margin: 12px 0;
+      width: 100%;
       resize: none;
-      width: 25vw;
       font-family: unset;
     }
   }
 
   &__button {
-    // @extend %titleUnderline;
     border: 3px solid #42b983;
     background-color: #fff;
     padding: 10px 32px;
 
     &:hover {
       background-color: $brand-color;
+    }
+  }
+
+  @include media-query(sm) {
+    &--alert-success {
+      display: flex;
+      justify-content: space-between;
+      background-color: #7fceab;
+      border: 1px solid #42b983;
+
+      p {
+        margin: 4px 12px;
+      }
+
+      button {
+        background-color: transparent;
+        border: transparent;
+      }
+    }
+
+    &__elements {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+
+      &--inputs {
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+
+        input {
+          margin: 0 12px 12px 0;
+          height: 42px;
+        }
+      }
     }
   }
 }

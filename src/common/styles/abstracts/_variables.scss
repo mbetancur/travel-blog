@@ -1,3 +1,12 @@
 /// Main brand color
 /// @type Color
 $brand-color: #42b983 !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'sm': 321px,
+  'md': 768px,
+  'lg': 1024px,
+) !default;
