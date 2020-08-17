@@ -27,7 +27,7 @@ export default {
   name: "NavMenu",
   data() {
     return {
-      isClose: true //TODO: prop only for device
+      isClose: true //TODO: make prop only for device
     };
   },
   methods: {
@@ -37,7 +37,7 @@ export default {
   },
   watch: {
     $route() {
-      if (window.matchMedia("(max-width: 321px)").matches) { //TODO: extract and improve query
+      if (window.matchMedia("(max-width: 426px)").matches) { //TODO: extract and improve query
         this.isClose = true;
       }
     }
