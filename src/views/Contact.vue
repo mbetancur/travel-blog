@@ -45,6 +45,7 @@ export default {
   }
   
   @include media-query(sm) {
+    padding: 42px 70px 70px;
     // @extend %pagePadding;
     &__info {
       display: flex;

@@ -117,6 +117,7 @@ export default {
 
       &-close {
         transition: none;
+        transform: none;
       }
 
       &__title {

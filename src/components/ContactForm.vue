@@ -85,20 +85,20 @@ export default {
   }
 
   &--alert-success {
-      display: flex;
-      justify-content: space-between;
-      background-color: #7fceab;
-      border: 1px solid #42b983;
+    display: flex;
+    justify-content: space-between;
+    background-color: #7fceab;
+    border: 1px solid #42b983;
 
-      p {
-        margin: 4px 12px;
-      }
-
-      button {
-        background-color: transparent;
-        border: transparent;
-      }
+    p {
+      margin: 4px 12px;
     }
+
+    button {
+      background-color: transparent;
+      border: transparent;
+    }
+  }
 
   &__elements {
     display: flex;
@@ -160,6 +160,10 @@ export default {
           margin: 0 12px 12px 0;
           height: 42px;
         }
+      }
+
+      textarea {
+        margin: 0 18px;
       }
     }
   }
