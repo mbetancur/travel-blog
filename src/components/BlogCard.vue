@@ -1,12 +1,10 @@
 <template>
-  <div class="blog-card">
-    <router-link to="/post3">
-      <img src="../assets/arvi.jpg" alt="Foto blog card" class="blog-card__post-img" />
-      <div class="blog-card__post-data">
-        <p>{{image}}</p>
-        <h3>{{title}}</h3>
-      </div>
-    </router-link>
+  <div class="blog-card" @click="$router.replace({ path: `/post/${route}` })">
+    <img :src="require('@/assets/' + image + '')" alt="Foto blog card" class="blog-card__post-img" />
+    <div class="blog-card__post-data">
+      <p>{{date}}</p>
+      <h3>{{title}}</h3>
+    </div>
   </div>
 </template>
 
@@ -14,7 +12,7 @@
 export default {
   name: "BlogCard",
   props: {
-    link: {
+    route: {
       type: String,
       required: true
     },

@@ -2,60 +2,37 @@
   <div class="blog">
     <h1 class="blog__title">Blog</h1>
     <div class="blog__cards">
-      <div class="blog__cards__post">
-        <router-link to="/post1">
-          <img src="../assets/salado.jpg" alt="Foto panel principal" class="blog__cards__post--img" />
-          <div class="blog__cards__post--data">
-            <p>Junio 2020</p>
-            <h3>Un tanto Salado</h3>
-          </div>
-        </router-link>
-      </div>
-      <div class="blog__cards__post">
-        <router-link to="/post2">
-          <img
-            src="../assets/la-clara.jpg"
-            alt="Foto panel principal"
-            class="blog__cards__post--img"
-          />
-          <div class="blog__cards__post--data">
-            <p>Junio 2020</p>
-            <h3>Tan Clara como el agua</h3>
-          </div>
-        </router-link>
-      </div>
-      <!-- <blog-card link="post3" image="../assets/salado.jpg" date="June 2020" title="El Arví" /> //TODO:look how to improve this creator-->
-      <div class="blog__cards__post">
-        <router-link to="/post3">
-          <img src="../assets/arvi.jpg" alt="Foto panel principal" class="blog__cards__post--img" />
-          <div class="blog__cards__post--data">
-            <p>Junio 2020</p>
-            <h3>Arví, el parque de la abundancia</h3>
-          </div>
-        </router-link>
-      </div>
+      <!-- //TODO:look how to improve this creator -->
+      <blog-card
+        route="salado"
+        image="salado.jpg"
+        date="June 2020"
+        title="Un tanto Salado"
+      />
+      <blog-card
+        route="arvi"
+        image="arvi.jpg"
+        date="June 2020"
+        title="Arví, el parque de la abundancia"
+      />
+      <blog-card
+        route="clara"
+        image="clara.jpg"
+        date="June 2020"
+        title="Tan Clara como el agua"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import BlogCard from "@/components/BlogCard";
-import SurveyModal from "@/components/SurveyModal";
 
 export default {
   components: {
     BlogCard,
-    SurveyModal
   },
-  name: "Blog",
-  created() {
-    this.modalOpen = true;
-  },
-  data() {
-    return {
-      modalOpen: false
-    };
-  }
+  name: "Blog"
 };
 </script>
 

@@ -24,20 +24,9 @@ const routes = [
     component: () => import('../views/Blog.vue')
   },
   {
-    path: '/post1',
-    name: 'Post1',
-    component: () => import('../views/Post1.vue')
-  }
-  ,
-  {
-    path: '/post2',
-    name: 'Post2',
-    component: () => import('../views/Post2.vue')
-  },
-  {
-    path: '/post3',
-    name: 'Post3',
-    component: () => import('../views/Post3.vue')
+    path: '/post/:id',
+    name: 'Post',
+    component: () => import('../views/Post.vue')
   },
   {
     path: '/opinion',
