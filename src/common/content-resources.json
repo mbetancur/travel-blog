@@ -1,0 +1,22 @@
+{
+    "blogData": [
+        {
+            "route": "salado",
+            "image": "salado.jpg",
+            "date": "June 2020",
+            "title": "Un tanto Salado"
+        },
+        {
+            "route": "salado",
+            "image": "salado.jpg",
+            "date": "June 2020",
+            "title": "Un tanto Salado"
+        },
+        {
+            "route": "salado",
+            "image": "salado.jpg",
+            "date": "June 2020",
+            "title": "Un tanto Salado"
+        }
+    ]
+}

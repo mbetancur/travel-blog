@@ -1,9 +1,9 @@
 <template>
-  <div class="blog-card" @click="$router.replace({ path: `/post/${route}` })">
-    <img :src="require('@/assets/' + image + '')" alt="Foto blog card" class="blog-card__post-img" />
+  <div class="blog-card" @click="$router.replace({ path: `/post/${data.route}` })">
+    <img :src="require('@/assets/' + data.image + '')" alt="Foto blog card" class="blog-card__post-img" />
     <div class="blog-card__post-data">
-      <p>{{date}}</p>
-      <h3>{{title}}</h3>
+      <p>{{data.date}}</p>
+      <h3>{{data.title}}</h3>
     </div>
   </div>
 </template>
@@ -12,6 +12,10 @@
 export default {
   name: "BlogCard",
   props: {
+    data: {
+      type: String,
+      required: true
+    },
     route: {
       type: String,
       required: true
@@ -27,7 +31,7 @@ export default {
     title: {
       type: String,
       required: true
-    }
+    },
   }
 };
 </script>

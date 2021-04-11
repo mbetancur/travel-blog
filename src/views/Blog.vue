@@ -4,12 +4,12 @@
     <div class="blog__cards">
       <!-- //TODO:look how to improve this creator -->
       <blog-card
-        route="salado"
-        image="salado.jpg"
-        date="June 2020"
-        title="Un tanto Salado"
+        id='blog-id'
+        v-for="blog in blogData"
+        :key="blog.id"
+        :data="blog"
       />
-      <blog-card
+      <!-- <blog-card
         route="arvi"
         image="arvi.jpg"
         date="June 2020"
@@ -19,20 +19,26 @@
         route="clara"
         image="clara.jpg"
         date="June 2020"
-        title="Tan Clara como el agua"
-      />
+        title="Tan Clara como el agua"  
+      />-->
     </div>
   </div>
 </template>
 
 <script>
 import BlogCard from "@/components/BlogCard";
+import blogData from "../common/content-resources.json"
 
 export default {
+  name: "Blog",
   components: {
     BlogCard,
   },
-  name: "Blog"
+  data() {
+    return {
+      blogData: blogData.blogData,
+    }
+  },
 };
 </script>
 
